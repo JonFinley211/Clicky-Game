@@ -12,7 +12,7 @@ function Nav(props) {
         <li className="brand">
           <a href="/">Clicky Game</a>
         </li>
-        <NavMessage score={props.score} topScore={props.topScore} />
+        <NavMessage currentScore={props.currentScore} topScore={props.topScore} />
         <li>
           Score: {props.currentScore} | Top Score: {props.topScore}
         </li>

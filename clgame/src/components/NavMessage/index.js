@@ -9,18 +9,18 @@ class NavMessage extends Component {
     animating: false
   };
 
-  componentDidUpdate({ score, topScore }, prevState) {
+  componentDidUpdate({ currentScore, topScore }, prevState) {
     const newState = { animating: true };
 console.log(newState)
-    if (score === 0 && topScore === 0) {
+    if (currentScore === 0 && topScore === 0) {
       newState.message = "";
-    } else if (score === 0 && topScore > 0) {
+    } else if (currentScore === 0 && topScore > 0) {
       newState.message = "incorrect";
     } else {
       newState.message = "correct";
     }
 
-    if (score !== this.props.score || this.state.message !== newState.message) {
+    if (currentScore !== this.props.currentScore || this.state.message !== newState.message) {
       this.setState(newState);
     }
   }
