@@ -19,25 +19,25 @@ class Game extends Component {
     this.setState({ data: this.shuffleData(this.state.data) });
   }
 
-  // handleCorrectGuess = newData => {
-  //   // const shuffledCards = data.sort(() => 0.5 - Math.random());
+  handleCorrectGuess = newData => {
+   
 
-  //   // get current score and add 1 to it
-  //   const currentScore = this.state.currentScore + 1;
+    // get current score and add 1 to it
+    const currentScore = this.state.currentScore + 1;
 
-  //   let topScore = this.state.topScore;
+    let topScore = this.state.topScore;
 
-  //   // check if current score is greater than topScore
-  //   if (currentScore > topScore) {
-  //     topScore = currentScore;
-  //   }
+    // check if current score is greater than topScore
+    if (currentScore > topScore) {
+      topScore = currentScore;
+    }
 
-  //   this.setState({
-  //     data: this.shuffleData(newData),
-  //     currentScore: currentScore,
-  //     topScore: topScore
-  //   });
-  // };
+    this.setState({
+      data: this.shuffleData(newData),
+      currentScore: currentScore,
+      topScore: topScore
+    });
+  };
 
   handleIncorrectGuess = data => {
     this.setState({
