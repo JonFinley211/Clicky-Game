@@ -13,6 +13,7 @@ class Game extends Component {
     data,
     currentScore: 0,
     topScore: 0
+   
   };
 
   componentDidMount() {
@@ -24,9 +25,9 @@ class Game extends Component {
 
     // get current score and add 1 to it
     const currentScore = this.state.currentScore + 1;
-
+console.log(currentScore)
     let topScore = this.state.topScore;
-
+console.log(topScore)
     // check if current score is greater than topScore
     if (currentScore > topScore) {
       topScore = currentScore;
@@ -42,7 +43,7 @@ class Game extends Component {
   handleIncorrectGuess = data => {
     this.setState({
       data: this.resetData(data),
-      score: 0
+      currentScore: 0
     });
   };
 
@@ -85,7 +86,9 @@ class Game extends Component {
     return (
 <Container>
       
-        <Nav></Nav>
+        <Nav topScore={this.state.topScore} currentScore={this.state.currentScore}/>
+
+        
         <Header></Header>
       
       

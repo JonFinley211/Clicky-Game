@@ -5,6 +5,7 @@ import "./style.css";
 // Component for the Navbar
 
 function Nav(props) {
+  console.log(props.score)
   return (
     <nav className="navbar">
       <ul>
@@ -13,7 +14,7 @@ function Nav(props) {
         </li>
         <NavMessage score={props.score} topScore={props.topScore} />
         <li>
-          Score: {props.score} | Top Score: {props.topScore}
+          Score: {props.currentScore} | Top Score: {props.topScore}
         </li>
       </ul>
     </nav>
